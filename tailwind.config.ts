@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,25 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // TaskBoard Pro custom colors
+                indigo: {
+                    50: '#EEF2FF',
+                    100: '#E0E7FF',
+                    200: '#C7D2FE',
+                    300: '#A5B4FC',
+                    400: '#818CF8',
+                    500: '#6366F1',
+                    600: '#4F46E5',
+                    700: '#4338CA',
+                    800: '#3730A3',
+                    900: '#312E81',
+                },
+                status: {
+                    todo: '#E2E8F0', // light gray
+                    inprogress: '#FDE68A', // yellow
+                    done: '#BBF7D0', // green
+                },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
