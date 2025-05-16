@@ -181,7 +181,7 @@ const AutomationForm: React.FC<AutomationFormProps> = ({ projectId, onComplete }
                   <FormLabel>Assignee</FormLabel>
                   <Select 
                     onValueChange={field.onChange} 
-                    defaultValue={field.value || ''}
+                    defaultValue={field.value || 'any_member'}
                   >
                     <FormControl>
                       <SelectTrigger>
@@ -189,6 +189,7 @@ const AutomationForm: React.FC<AutomationFormProps> = ({ projectId, onComplete }
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
+                      <SelectItem value="any_member">Any Team Member</SelectItem>
                       {project?.members.map(member => (
                         <SelectItem key={member.id} value={member.id}>
                           {member.name}
@@ -267,7 +268,7 @@ const AutomationForm: React.FC<AutomationFormProps> = ({ projectId, onComplete }
                   <FormLabel>Assignee</FormLabel>
                   <Select 
                     onValueChange={field.onChange} 
-                    defaultValue={field.value || ''}
+                    defaultValue={field.value || 'specific_member'}
                   >
                     <FormControl>
                       <SelectTrigger>
@@ -275,6 +276,7 @@ const AutomationForm: React.FC<AutomationFormProps> = ({ projectId, onComplete }
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
+                      <SelectItem value="specific_member">Select a Team Member</SelectItem>
                       {project?.members.map(member => (
                         <SelectItem key={member.id} value={member.id}>
                           {member.name}

@@ -172,7 +172,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ projectId, task, onComplete }) => {
                 <FormLabel>Assignee</FormLabel>
                 <Select 
                   onValueChange={field.onChange} 
-                  defaultValue={field.value || ''}
+                  defaultValue={field.value || 'unassigned'}
                 >
                   <FormControl>
                     <SelectTrigger>
@@ -180,7 +180,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ projectId, task, onComplete }) => {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="">Unassigned</SelectItem>
+                    <SelectItem value="unassigned">Unassigned</SelectItem>
                     {project?.members.map(member => (
                       <SelectItem key={member.id} value={member.id}>
                         {member.name}
@@ -225,6 +225,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ projectId, task, onComplete }) => {
                     selected={field.value}
                     onSelect={field.onChange}
                     initialFocus
+                    className="pointer-events-auto"
                   />
                 </PopoverContent>
               </Popover>
